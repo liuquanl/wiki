@@ -1,0 +1,19 @@
+配置多个站点
+配置多个location
+
+location
+
+
+
+前端路由添加404页面
+服务器就不再返回 404 错误页面，因为对于所有路径都会返回 index.html 文件
+location / {
+        root /usr/local/openresty/nginx/html/admin.domain.com/dist;
+        index index.html
+        ssi on;
+        try_files $uri $uri/ @router;
+        #try_files $uri $uri/ =404;
+}
+location @router {
+        rewrite ^.*$ /index.html last;
+}
