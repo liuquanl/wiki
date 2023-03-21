@@ -1,0 +1,17 @@
+There are 3 concepts that LVM manages:
+
+    Volume Groups
+    Physical Volumes
+    Logical Volumes 
+    
+Once you have your LVM partition, you need to initialize it as a Physical Volume. Assuming this partition is /dev/sda1:
+
+sudo pvcreate /dev/sda1
+
+sudo vgcreate foo /dev/sda1
+
+lvcreate -n bar -L 5g foo 
+
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
