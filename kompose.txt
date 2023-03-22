@@ -1,0 +1,4 @@
+Kompose is a conversion tool for Docker Compose to container orchestrators such as Kubernetes (or OpenShift).
+https://github.com/kubernetes/kompose
+kompose convert -f docker-compose.yaml
+kubectl apply -f .

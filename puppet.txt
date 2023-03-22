@@ -1,0 +1,2 @@
+http://www.cnblogs.com/yuxc/p/3836711.html
+《精通Puppet配置管理工具》
