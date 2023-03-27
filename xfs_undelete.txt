@@ -1,0 +1,10 @@
+An undelete tool for the XFS filesystem.
+
+https://github.com/ianka/xfs_undelete.git
+xfs_undelete tries to recover all files on an XFS filesystem marked as deleted. 
+You may also specify a date or age since deletion, and file types to ignore or to recover exclusively.
+
+首先要安装tcl，直接在官网下载源码包安装，要求版本是8.6以上的，https://www.tcl.tk/software/tcltk/download.html。
+然后要安装tcllib，同上源码安装，https://www.tcl.tk/software/tcllib/
+最后下载恢复工具，这一个不用安装，https://github.com/ianka/xfs_undelete.git
+将需要恢复数据的硬盘挂载到另一个电脑（或虚拟机）上，进入到xfs_undelete目录下，执行./xfs_undelete -t 指定从什么时间开始恢复格式yyyy-mm-dd 指定要恢复的硬盘例如/dev/sda1，之后程序就会自动恢复数据到目录下，最后将恢复的文件重命名就行了。这个程序不能保证文件都能完好的恢复，就我的使用情况来看只有一两个是损坏的。
